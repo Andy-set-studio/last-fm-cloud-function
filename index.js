@@ -30,7 +30,7 @@ const parseLatestTrack = dataSet => {
     return response;
 };
 
-const lastFmMostRecentTrack = async (req, res) => {
+exports.lastFmMostRecentTrack = async (req, res) => {
     
     try {
         let response = await fetch(API_URL);
@@ -48,5 +48,3 @@ const lastFmMostRecentTrack = async (req, res) => {
         });
     }
 };
-
-export default lastFmMostRecentTrack();

@@ -1,9 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
 var _nodeFetch = require('node-fetch');
 
 var _nodeFetch2 = _interopRequireDefault(_nodeFetch);
@@ -60,7 +56,8 @@ exports.lastFmMostRecentTrack = (() => {
         }
     });
 
-    return function lastFmMostRecentTrack(_x, _x2) {
+    return function (_x, _x2) {
         return _ref.apply(this, arguments);
     };
 })();
+
