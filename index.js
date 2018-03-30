@@ -30,25 +30,22 @@ const parseLatestTrack = dataSet => {
     return response;
 };
 
-const lastFmMostRecentTrack = async () => {
+const lastFmMostRecentTrack = async (req, res) => {
     
     try {
         let response = await fetch(API_URL);
         let jsonData = await response.json();
-        console.log({
+        
+        res.send({
             'status': 'success',
             'data': {...parseLatestTrack(jsonData) }
-        }) 
-        return {
-            'status': 'success',
-            'data': {...parseLatestTrack(jsonData) }
-        };
+        });
     }
     catch(error) {
-        return {
+        res.send({
             'status': 'error',
             'message': error
-        }
+        });
     }
 };
 

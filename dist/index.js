@@ -42,31 +42,28 @@ const parseLatestTrack = dataSet => {
 };
 
 const lastFmMostRecentTrack = (() => {
-    var _ref = _asyncToGenerator(function* () {
+    var _ref = _asyncToGenerator(function* (req, res) {
 
         try {
             let response = yield (0, _nodeFetch2.default)(API_URL);
             let jsonData = yield response.json();
-            console.log({
+
+            res.send({
                 'status': 'success',
                 'data': Object.assign({}, parseLatestTrack(jsonData))
             });
-            return {
-                'status': 'success',
-                'data': Object.assign({}, parseLatestTrack(jsonData))
-            };
         } catch (error) {
-            return {
+            res.send({
                 'status': 'error',
                 'message': error
-            };
+            });
         }
     });
 
-    return function lastFmMostRecentTrack() {
+    return function lastFmMostRecentTrack(_x, _x2) {
         return _ref.apply(this, arguments);
     };
 })();
 
-exports.default = lastFmMostRecentTrack();
+exports.lastFmMostRecentTrack;
 
