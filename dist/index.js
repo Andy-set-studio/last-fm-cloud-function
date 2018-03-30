@@ -41,7 +41,7 @@ const parseLatestTrack = dataSet => {
     return response;
 };
 
-const lastFmMostRecentTrack = (() => {
+exports.lastFmMostRecentTrack = (() => {
     var _ref = _asyncToGenerator(function* (req, res) {
 
         try {
@@ -64,6 +64,3 @@ const lastFmMostRecentTrack = (() => {
         return _ref.apply(this, arguments);
     };
 })();
-
-exports.lastFmMostRecentTrack;
-
